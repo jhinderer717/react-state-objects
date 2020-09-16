@@ -8,7 +8,9 @@ class App extends Component {
   state = {
     cohortName: 'Tarjan',
     salutation: 'Hello',
-    name: 'John'
+    name: 'John',
+    whereILive: 'St. Paul',
+    pizzaTopping: 'pepperoni'
   }
 
   render() {
@@ -19,6 +21,12 @@ class App extends Component {
         <div>
           {this.state.salutation}! My name is {this.state.name}.
         </div>
+
+        <ul>
+          <li>My name is {this.state.name}.</li>
+          <li>I live in {this.state.whereILive}</li>
+          <li>My favorite pizza topping is {this.state.pizzaTopping}</li>
+        </ul>
       </div>
     );
   }

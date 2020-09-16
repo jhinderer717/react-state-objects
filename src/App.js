@@ -3,13 +3,21 @@ import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
+
+  // Define our initial state
+  state = {
+    cohortName: 'Tarjan',
+    salutation: 'Hello',
+    name: 'John'
+  }
+
   render() {
     return (
       <div>
-        <h1>Tarjan Learns State with Objects</h1>
+        <h1>{this.state.cohortName} Learns State with Objects</h1>
 
         <div>
-          Hello! My name is John.
+          {this.state.salutation}! My name is {this.state.name}.
         </div>
       </div>
     );

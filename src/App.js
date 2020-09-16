@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Creatures from './Creatures'
 
 class App extends Component {
 
@@ -44,6 +45,9 @@ class App extends Component {
       <div>
         <h1>{this.state.cohortName} Learns State with Objects</h1>
 
+        <h4>Mythical Creatures</h4>
+        <Creatures />
+        
         <div>
           {this.state.salutation}
         </div>
@@ -56,6 +60,8 @@ class App extends Component {
 
         <h4>Edit user</h4>
         <input type="text" placeholder="Favorite Pizza Topping" onChange={this.onChangePizza} />
+
+        
       </div>
     );
   }

@@ -8,9 +8,11 @@ class App extends Component {
   state = {
     cohortName: 'Tarjan',
     salutation: 'Hello',
-    name: 'John',
-    whereILive: 'St. Paul',
-    pizzaTopping: 'pepperoni'
+    user: {
+      name: 'John',
+      whereILive: 'St. Paul',
+      pizzaTopping: 'pepperoni'
+    },
   }
 
   render() {
@@ -19,13 +21,13 @@ class App extends Component {
         <h1>{this.state.cohortName} Learns State with Objects</h1>
 
         <div>
-          {this.state.salutation}! My name is {this.state.name}.
+          {this.state.salutation}! My name is {this.state.user.name}.
         </div>
 
         <ul>
-          <li>My name is {this.state.name}.</li>
-          <li>I live in {this.state.whereILive}</li>
-          <li>My favorite pizza topping is {this.state.pizzaTopping}</li>
+          <li>My name is {this.state.user.name}.</li>
+          <li>I live in {this.state.user.whereILive}</li>
+          <li>My favorite pizza topping is {this.state.user.pizzaTopping}</li>
         </ul>
       </div>
     );

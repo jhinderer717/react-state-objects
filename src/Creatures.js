@@ -14,14 +14,14 @@ class Creatures extends Component{
     // Capture and store the new creature name
     // so we can use it later to add it to the list of creatures
     onChangeCreatureName= (event) => {
-        let newCreatureName = event.target.value;
+        // let newCreatureName = event.target.value;
         this.setState({
-            newCreatureName: newCreatureName
+            newCreatureName: event.target.value
         });
     }
 
     // Add the stored creature name to our list
-    onAddCreature = (event) => {
+    onAddCreature = () => {
         // TODO add creature to state
         // let newCreature = $('input').val();
 
@@ -66,12 +66,19 @@ class Creatures extends Component{
 
         return(
             <div>
-                <input type="text" placeholder="New Creature Name" value={this.state.newCreatureName} onChange={this.onChangeCreatureName} />
+                <input 
+                    type="text" 
+                    placeholder="New Creature Name" 
+                    value={this.state.newCreatureName} 
+                    onChange={this.onChangeCreatureName} 
+                />
                 <button onClick={this.onAddCreature}>Add Creature</button>
+
+
                 <ul>
-                    {this.state.creatures.map(creature =>
-                        <li key={creature}>
-                            {creature}
+                    {this.state.creatures.map((creature, i) =>
+                        <li key={i}>{/* Set the key to the index of the item in the array (unique) */}
+                            <em>{creature}</em>
                             <button>Love it</button>
                         </li>
                     )}

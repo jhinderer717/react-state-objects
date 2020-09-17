@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import CreatureForm from './CreatureForm';
+
 class Creatures extends Component{
 
     state = {
@@ -80,6 +82,7 @@ class Creatures extends Component{
                     onChange={this.onChangeCreatureName} 
                 />
                 <button onClick={this.onAddCreature}>Add Creature</button>
+                <CreatureForm />
 
 
                 <ul>

@@ -5,7 +5,6 @@ import CreatureForm from './CreatureForm';
 class Creatures extends Component{
 
     state = {
-        newCreatureName: '',
         creatures: [
             'Unicorn',
             'Liger',
@@ -13,21 +12,12 @@ class Creatures extends Component{
         ]
     };
 
-    // Capture and store the new creature name
-    // so we can use it later to add it to the list of creatures
-    onChangeCreatureName= (event) => {
-        // let newCreatureName = event.target.value;
-        this.setState({
-            newCreatureName: event.target.value
-        });
-    }
-
     // Add the stored creature name to our list
-    onAddCreature = () => {
+    onAddCreature = (creatureParam) => {
         // TODO add creature to state
         // let newCreature = $('input').val();
 
-        console.log('new creature name is', this.state.newCreatureName);
+        console.log('new creature name is', creatureParam);
 
         // Add to array
         // DON'T do this
@@ -40,7 +30,7 @@ class Creatures extends Component{
                 // Array spread operator to the rescue
                 // AKA copy/paste operator
                 ...this.state.creatures,
-                this.state.newCreatureName
+                creatureParam
             ]
         });
     }
@@ -75,15 +65,7 @@ class Creatures extends Component{
                 <h1>Featured Creature of the Night</h1>
                 <h3>{this.props.creatureProp}</h3>
 
-                <input 
-                    type="text" 
-                    placeholder="New Creature Name" 
-                    value={this.state.newCreatureName} 
-                    onChange={this.onChangeCreatureName} 
-                />
-                <button onClick={this.onAddCreature}>Add Creature</button>
-                <CreatureForm />
-
+                <CreatureForm onAddCreature={this.onAddCreature}/>
 
                 <ul>
                     {this.state.creatures.map((creature, i) =>

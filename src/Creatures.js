@@ -43,6 +43,10 @@ class Creatures extends Component{
         });
     }
 
+    loveIt = (event, creatureParam) =>{
+        console.log('button pressed', event, creatureParam);
+    }
+
     render(){
         // Using for..of loops
         //
@@ -66,6 +70,9 @@ class Creatures extends Component{
 
         return(
             <div>
+                <h1>Featured Creature of the Night</h1>
+                <h3>{this.props.creatureProp}</h3>
+
                 <input 
                     type="text" 
                     placeholder="New Creature Name" 
@@ -79,7 +86,7 @@ class Creatures extends Component{
                     {this.state.creatures.map((creature, i) =>
                         <li key={i}>{/* Set the key to the index of the item in the array (unique) */}
                             <em>{creature}</em>
-                            <button>Love it</button>
+                            <button onClick={(event) => this.loveIt(event, creature)}>Bop it</button>
                         </li>
                     )}
                 </ul>
